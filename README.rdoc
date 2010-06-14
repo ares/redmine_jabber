@@ -1,0 +1,5 @@
+= jabber
+
+This plugin will enable jabber notificaions. There are already some advanced 
+plugins but they depend on xmpp4r which seems imo unstable and outdated.
+I plan to use blather instead.
