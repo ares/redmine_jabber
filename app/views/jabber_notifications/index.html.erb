@@ -1,0 +1,9 @@
+<div id="set-jid">
+  <h2><%= l :jid_setup %></h2>
+  <% form_for :user, User.current, :url => {:controller => 'jabber_notifications', :action => 'update_jid' },
+                     :method => :post, :builder => TabularFormBuilder, :lang => current_language,
+                     :html => {:class => 'tabular'} do |f| %>
+    <%= f.text_field :jid %>
+    <%= f.submit l(:save) %>
+  <% end %>
+</div>

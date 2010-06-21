@@ -1,3 +1,9 @@
 # English strings go here for Rails i18n
 en:
   my_label: "My label"
+  error_updating_jid: "Setting JID info was unsuccessfull!"
+  jid_setup: "Setup your JID"
+  save: "Save"
+  field_jid: "JID"
+  bot_jid: "JID of bot"
+  bot_password: "Bot password"
