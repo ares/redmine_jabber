@@ -1,5 +1,38 @@
-= jabber
+= Jabber plugin
 
-This plugin will enable jabber notificaions. There are already some advanced 
+This plugin will enables jabber notificaions. There are already some advanced 
 plugins but they depend on xmpp4r which seems imo unstable and outdated.
-I plan to use blather instead.
+This plugin uses blather instead.
+
+Everything important is on github http://github.com/ares/redmine_jabber/
+Code is released under MIT License
+
+= Prerequisites
+
+As mentioned before, this plugin uses blather library. You must install it in order
+to use this plugin.
+
+# this should do the trick
+gem install blather
+
+= Install
+
+1. Put this plugin into Rails.root/vendor/plugins/redmine_jabber
+2. Run rake db:migrate_plugins
+   - this will add jid attribute to your user
+3. Restart redmine if it's already running
+4. Configure the plugin (administration -> plugins -> configure)
+   - you must set JID of account that will send notifications and your password
+   - password is stored in plaintext (keep that in mind)
+5. Every user should see "Jabber" link in right upper corner (next to Sign out)
+   - if anyone sets his own JID in here, notifications will be sent to him
+   - if you want to disable jabber notification, just save empty JID
+
+That's it, now you should be good to go
+
+= Future work
+
+This is the very early release. I plan to add support for real jabber bot which
+will enable controlling of tickets. Any help is welcome, stay tuned.
+
+If you like this plugin, please consider donation.
