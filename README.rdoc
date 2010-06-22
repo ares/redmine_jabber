@@ -30,6 +30,11 @@ gem install blather
 
 That's it, now you should be good to go
 
+= Changelog
+
+0.1 2010-06-22
+ * Plugin sends notification to users who setup their JIDs
+
 = Future work
 
 This is the very early release. I plan to add support for real jabber bot which
