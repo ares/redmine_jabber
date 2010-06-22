@@ -1,0 +1,8 @@
+# Czech strings go here for Rails i18n
+cs:
+  error_updating_jid: "Nastaveni JIDu se nezdařilo!"
+  jid_setup: "Nastavení JID"
+  save: "Uložit"
+  field_jid: "JID"
+  bot_jid: "JID rozesílatele"
+  bot_password: "Heslo rozesílatele"
