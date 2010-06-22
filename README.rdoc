@@ -5,6 +5,7 @@ plugins but they depend on xmpp4r which seems imo unstable and outdated.
 This plugin uses blather instead.
 
 Everything important is on github http://github.com/ares/redmine_jabber/
+
 Code is released under MIT License
 
 = Prerequisites
@@ -12,8 +13,8 @@ Code is released under MIT License
 As mentioned before, this plugin uses blather library. You must install it in order
 to use this plugin.
 
-# this should do the trick
-gem install blather
+this should do the trick
+ gem install blather
 
 = Install
 
@@ -32,7 +33,7 @@ That's it, now you should be good to go
 
 = Changelog
 
-0.1 2010-06-22
+0.1 (2010-06-22)
  * Plugin sends notification to users who setup their JIDs
 
 = Future work
