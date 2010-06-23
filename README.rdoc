@@ -11,7 +11,8 @@ Code is released under MIT License
 = Prerequisites
 
 As mentioned before, this plugin uses blather library. You must install it in order
-to use this plugin.
+to use this plugin. You also need to met dependencies for blather so you need libxslt
+development files (debian like systems => apttude install libxslt1-dev)
 
 this should do the trick
  gem install blather
