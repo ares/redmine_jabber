@@ -15,7 +15,7 @@ to use this plugin. You also need to met dependencies for blather so you need li
 development files (debian like systems => apttude install libxslt1-dev)
 
 this should do the trick
- gem install blather
+ gem install blather eventmachine
 
 = Install
 
