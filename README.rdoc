@@ -43,3 +43,8 @@ This is the very early release. I plan to add support for real jabber bot which
 will enable controlling of tickets. Any help is welcome, stay tuned.
 
 If you like this plugin, please consider donation.
+
+= Credits
+
+Thanks to IglooNET s.r.o. (my current employer) I was allowed to work on this plugin and release it under MIT licence.
+Thanks to Jeff Smick for fast and willing consulting of blather library usage

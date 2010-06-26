@@ -1,4 +1,5 @@
 require 'redmine'
+# TODO Jabber menu should appear only to logged users!
 
 Redmine::Plugin.register :redmine_jabber do
   name 'Redmine Jabber plugin'

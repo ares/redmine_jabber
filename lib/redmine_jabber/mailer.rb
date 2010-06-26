@@ -13,7 +13,7 @@ class Mailer < ActionMailer::Base
     to = ([mail.to] + [mail.bcc]).flatten.compact.uniq
     
     to.each do |email|
-      if (user = User.find_by_mail(email)) && user.jid.present?
+      if (user = User.find_by_mail(email)) && user.jid.present? && user.jid_authenticated
         if message.nil?
           footer = Setting[:emails_footer].gsub(/\r\n/, "\n")
           message = mail.body.gsub(/#{footer}.*/m, "").gsub(/[-]{3,}/, "\n").gsub(/[\n]{3,}/, "\n\n").strip
