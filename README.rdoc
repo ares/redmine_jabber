@@ -27,13 +27,19 @@ this should do the trick
    - you must set JID of account that will send notifications and your password
    - password is stored in plaintext (keep that in mind)
 5. Every user should see "Jabber" link in right upper corner (next to Sign out)
-   - if anyone sets his own JID in here, notifications will be sent to him
+   - if anyone sets his own JID in here, authentication request is sent to him
+   - after he clicks on received link, he is aunteticated and will receive notifications
    - if you want to disable jabber notification, just save empty JID
 
 That's it, now you should be good to go
 
 = Changelog
 
+0.2 (2010-06-27)
+ * Plugin requires JID authentication before sending any notifications
+  * Users with already setup JID, ares automatically authenticated by migration
+ * Added some authorization so most of actions can do only logged users
+ * In order to upgrade, migrations must be run
 0.1 (2010-06-22)
  * Plugin sends notification to users who setup their JIDs
 
