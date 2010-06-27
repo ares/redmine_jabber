@@ -1,5 +1,4 @@
 require 'redmine'
-# TODO Jabber menu should appear only to logged users!
 
 Redmine::Plugin.register :redmine_jabber do
   name 'Redmine Jabber plugin'
@@ -7,7 +6,8 @@ Redmine::Plugin.register :redmine_jabber do
   description 'This is a jabber plugin for redmine'
   version '0.0.1'
 
-  menu :account_menu, :jabber_notifications, { :controller => 'jabber_notifications', :action => 'index' }, :caption => 'Jabber'
+  menu :account_menu, :jabber_notifications, { :controller => 'jabber_notifications', :action => 'index' }, 
+    :caption => 'Jabber', :if => Proc.new{ !User.current.kind_of?(AnonymousUser) }
 
   require_dependency 'app/models/mailer'
   require_dependency 'redmine_jabber/mailer'

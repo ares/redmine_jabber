@@ -2,7 +2,7 @@ require_dependency 'app/models/mailer'
 require_dependency 'redmine_jabber/mailer'
 
 class JabberNotificationsController < ApplicationController
-  # TODO define some authorization!
+  before_filter :authorize, :except => :authenticate
   unloadable
 
   def index
@@ -35,8 +35,8 @@ class JabberNotificationsController < ApplicationController
 
   def authenticate
     user = User.find_by_jid(params[:jid])
-    if user && user.jid_token == params[:token] && !user.jid_authenticated &&
-        user.update_attribute(:jid_authenticated, true)
+    if params[:jid].present? && user && user.jid_token == params[:token] &&
+        !user.jid_authenticated && user.update_attribute(:jid_authenticated, true)
       RedmineJabber::Notifier.send_message(user.jid, l(:jid_authenticated_message))
       flash.now[:notice] = l(:notice_sucessful_authentication)
     else
@@ -49,6 +49,11 @@ class JabberNotificationsController < ApplicationController
   PASSWORD_CHARS = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ23456789'.split('')
   def generate_token(length = 20)
     Array.new(length) {|_| PASSWORD_CHARS.rand }.join
+  end
+
+  def authorize
+    redirect_to :controller => 'account', :action => 'login' and return false \
+      if User.current.kind_of?(AnonymousUser)
   end
 
 end
