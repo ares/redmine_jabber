@@ -12,10 +12,12 @@ Code is released under MIT License
 
 As mentioned before, this plugin uses blather library. You must install it in order
 to use this plugin. You also need to met dependencies for blather so you need libxslt
-development files (debian like systems => apttude install libxslt1-dev)
+development files (debian like systems => aptitude install libxslt1-dev)
 
-this should do the trick
- gem install blather eventmachine
+Using bunlder add a gem blather to you Gemfile, specify version 0.4.8 and run bundle install. 
+If you do not use bundler this should do the trick:
+ gem install eventmachine
+ gem install blather -v 0.4.8
 
 = Install
 

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'redmine'
 
 Redmine::Plugin.register :redmine_jabber do
@@ -6,11 +7,11 @@ Redmine::Plugin.register :redmine_jabber do
   description 'This is a jabber plugin for redmine'
   version '0.0.1'
 
-  menu :account_menu, :jabber_notifications, { :controller => 'jabber_notifications', :action => 'index' }, 
+  menu :account_menu, :jabber_notifications, { :controller => 'jabber_notifications', :action => 'index' },
     :caption => 'Jabber', :if => Proc.new{ !User.current.kind_of?(AnonymousUser) }
 
-  require_dependency 'app/models/mailer'
-  require_dependency 'redmine_jabber/mailer'
+  require 'redmine_jabber/mail_observer'
+  ActionMailer::Base.register_observer(MailObserver)
 
   settings :default => {
     'bot_jid' => '',

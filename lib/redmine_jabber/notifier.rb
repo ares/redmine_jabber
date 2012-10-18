@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'blather/client/client'
 class RedmineJabber::Notifier < Blather::Client
   def self.send_message(jid, message)
