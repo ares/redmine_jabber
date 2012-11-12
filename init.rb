@@ -8,7 +8,7 @@ Redmine::Plugin.register :redmine_jabber do
   version '0.0.1'
 
   menu :account_menu, :jabber_notifications, { :controller => 'jabber_notifications', :action => 'index' },
-    :caption => 'Jabber', :if => Proc.new{ !User.current.kind_of?(AnonymousUser) }
+    :caption => 'Jabber', :if => Proc.new{ !User.current.kind_of?(AnonymousUser) }, :before => :logout
 
   require 'redmine_jabber/mail_observer'
   ActionMailer::Base.register_observer(MailObserver)
