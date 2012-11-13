@@ -6,7 +6,6 @@ class MailObserver
     return mail if mail.to.nil? && mail.bcc.nil?
     to = ([mail.to] + [mail.bcc]).flatten.compact.uniq
     to.each do |email|
-      binding.pry
       if (user = User.find_by_mail(email)) && user.jid.present? && user.jid_authenticated
         footer  = Setting[:emails_footer].gsub(/\r\n/, "\n")
         part = mail.body.parts.select {|p| p.content_type =~ /text\/plain/}.first # plaintext
