@@ -1,6 +1,3 @@
-require_dependency 'app/models/mailer'
-require_dependency 'redmine_jabber/mailer'
-
 class JabberNotificationsController < ApplicationController
   before_filter :authorize, :except => :authenticate
   unloadable
